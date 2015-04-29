@@ -19,7 +19,7 @@ Begin["`Private`"]
 
 SetAttributes[stepTrace, HoldFirst]
 (*ClearAttributes[stepTrace, HoldFirst]*)
-stepTrace[expr_, OptionsPattern[{"OutputWrapper" -> Defer, "HaltingContexts" -> {"Global`"}, "MaxSteps"-> 100}]] := Module[
+stepTrace[expr_, OptionsPattern[{"OutputWrapper" -> Defer, "HaltingContexts" -> {"Global`"}, "ExcludedContexts" -> {}, "MaxSteps"-> 100}]] := Module[
 	{
 		currentExpr, newExpr = HoldForm[expr], stepNumber = 0
 	},
@@ -32,16 +32,18 @@ stepTrace[expr_, OptionsPattern[{"OutputWrapper" -> Defer, "HaltingContexts" -> 
 ]
 
 SetAttributes[step, HoldFirst]
-(*ClearAttributes[step, HoldFirst]*)
-step[expr_, OptionsPattern[{"OutputWrapper" -> HoldForm, "HaltingContexts" -> {"Global`"}}]] := Module[
+step[expr_, OptionsPattern[{"OutputWrapper" -> HoldForm, "HaltingContexts" -> {"Global`"}, "ExcludedContexts" -> {}}]] := Module[
 	{
 		trace, tracePart, contexts, replacementTarget
 	},
-	trace = Trace[expr];
+	trace = Trace[Unevaluated[expr]];
 	If[trace === {}, Return[expr // OptionValue["OutputWrapper"]]];
 	contexts[ex_] := Context /@ Cases[ex, s_Symbol -> HoldPattern[s], {0, Infinity}, Heads -> True] // DeleteDuplicates;
 	tracePart = ReplaceRepeated[trace, List[first_List, rest___] -> first];
-	replacementTarget = Select[tracePart // Rest, Intersection[contexts[#], OptionValue["HaltingContexts"]] != {} &] // If[# == {}, Last[tracePart], First[#]] &;
+	replacementTarget = Select[
+		tracePart // Rest,
+		(Intersection[contexts[#], OptionValue["HaltingContexts"]] != {} && Intersection[contexts[#], OptionValue["ExcludedContexts"]] === {})&
+	] // If[# == {}, Last[tracePart], First[#]] &;
 	OptionValue["OutputWrapper"][expr] /. (First[tracePart] /. HoldForm -> HoldPattern) :> RuleCondition @ Extract[replacementTarget, 1, $ConditionHold]
 ]
 
