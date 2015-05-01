@@ -13,6 +13,7 @@ VisualDebug::usage= "Main utility"
 step
 stepTrace
 stepTracePrint
+debug
 shape
 
 Begin["`Private`"]
@@ -53,6 +54,32 @@ step[expr_, OptionsPattern[{"OutputWrapper" -> HoldForm, "HaltingContexts" -> {"
 		(Intersection[contexts[#], OptionValue["HaltingContexts"]] != {} && Complement[contexts[#], OptionValue["HaltingContexts"]~Union~{"System`"}] === {} && # =!= First[tracePart])&
 	] // If[# == {}, Last[tracePart], First[#]] &;
 	OptionValue["OutputWrapper"][expr] /. (First[tracePart] /. HoldForm -> HoldPattern) :> RuleCondition @ Extract[replacementTarget, 1, $ConditionHold]
+]
+
+SetAttributes[debug, HoldFirst]
+debug[origExpr_, opts : OptionsPattern[{"Heads" -> False}]] := Module[
+	{
+		currentExpr, allowedParts, part
+	},
+	currentExpr = origExpr;
+	allowedParts = Position[currentExpr, _, Heads -> OptionValue["Heads"]] // Sort // Rest;
+	Manipulate[
+		part = allowedParts[[partNumber]];
+		ReplacePart[currentExpr, 
+		part -> Style[Extract[currentExpr, part, HoldForm], FontColor -> RGBColor[1, 0, 0], Bold]],
+		{partNumber, If[OptionValue["Heads"], 2, 1], Dynamic[Length[allowedParts]], 1},
+		Row[{
+			Button["Evaluate",	
+				currentExpr = ReplacePart[currentExpr, part -> Evaluate[Extract[currentExpr, part]]];
+				allowedParts = Position[currentExpr, _, Heads -> OptionValue["Heads"]] // Sort // Rest
+			],
+			Button["Reset",
+				partNumber = If[OptionValue["Heads"], 2, 1];
+				currentExpr = origExpr;
+				allowedParts = Position[currentExpr, _, Heads -> OptionValue["Heads"]] // Sort // Rest
+			]
+		}]
+	]
 ]
 
 SetAttributes[shape, HoldAll]
