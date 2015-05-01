@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[    161080,       4127]
-NotebookOptionsPosition[    149429,       3805]
-NotebookOutlinePosition[    150474,       3838]
-CellTagsIndexPosition[    150301,       3831]
+NotebookDataLength[    162354,       4170]
+NotebookOptionsPosition[    150507,       3842]
+NotebookOutlinePosition[    151552,       3875]
+CellTagsIndexPosition[    151379,       3868]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3718,7 +3718,8 @@ Cell[BoxData["1"], "Output",
  CellChangeTimes->{{3.6393319778066864`*^9, 3.6393319946346865`*^9}, 
    3.639483920420752*^9, {3.639484244112219*^9, 3.6394842624572315`*^9}, {
    3.6394845377765465`*^9, 3.639484551847747*^9}, 3.6394847057573466`*^9, 
-   3.6394847885943465`*^9}]
+   3.6394847885943465`*^9, {3.639485144104334*^9, 3.6394851624812517`*^9}, 
+   3.6394852977361045`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3771,11 +3772,13 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell["\<\
-stepTrace[Integrate[x+x, {x, 0, 1}]]\
+stepTrace[Integrate[x+x, {x, 0, 1}]]
+stepTracePrint[Integrate[x+x, {x, 0, 1}]]\
 \>", "Input",
  CellChangeTimes->{{3.6393058553036027`*^9, 3.6393059558966026`*^9}, {
   3.6394839305129166`*^9, 3.639483943241211*^9}, {3.6394847246655464`*^9, 
-  3.6394847311239467`*^9}}],
+  3.6394847311239467`*^9}, {3.6394851461791472`*^9, 3.6394851466939507`*^9}, {
+  3.6394853005004025`*^9, 3.6394853095016603`*^9}}],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -3799,8 +3802,42 @@ Cell[BoxData[
     HoldForm]}], "}"}]], "Output",
  CellChangeTimes->{
   3.639331976539686*^9, {3.639483925240658*^9, 3.639483943662368*^9}, 
-   3.6394847317791467`*^9, 3.6394848776393547`*^9}]
+   3.6394847317791467`*^9, 3.6394848776393547`*^9, {3.6394851472711544`*^9, 
+   3.639485164244063*^9}, {3.6394853016080093`*^9, 3.639485309907263*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubsuperscriptBox["\[Integral]", "0", "1"], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"x", "+", "x"}], ")"}], 
+    RowBox[{"\[DifferentialD]", "x"}]}]}],
+  HoldForm]], "Print",
+ CellChangeTimes->{3.639485309922863*^9}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{
+   SubsuperscriptBox["\[Integral]", "0", "1"], 
+   RowBox[{
+    RowBox[{"2", " ", "x"}], 
+    RowBox[{"\[DifferentialD]", "x"}]}]}],
+  HoldForm]], "Print",
+ CellChangeTimes->{3.639485309922863*^9}],
+
+Cell[BoxData[
+ TagBox["1",
+  HoldForm]], "Print",
+ CellChangeTimes->{3.639485309922863*^9}]
 }, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"stepTracePrint", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.6394853448046865`*^9, 3.6394853526359367`*^9}}]
 }, Open  ]]
 },
 WindowSize->{1475, 794},
@@ -3830,9 +3867,9 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Info3638693937-9300161", 149964, 3819},
- {"Info3638694004-9300161", 150079, 3822},
- {"Info3638694056-9300161", 150193, 3825}
+ {"Info3638693937-9300161", 151042, 3856},
+ {"Info3638694004-9300161", 151157, 3859},
+ {"Info3638694056-9300161", 151271, 3862}
  }
 *)
 (*NotebookFileOutline
@@ -4117,17 +4154,23 @@ Cell[CellGroupData[{
 Cell[145780, 3696, 100, 1, 82, "Section"],
 Cell[CellGroupData[{
 Cell[145905, 3701, 705, 13, 52, "Input"],
-Cell[146613, 3716, 276, 4, 32, "Output"]
+Cell[146613, 3716, 352, 5, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[146926, 3725, 764, 19, 52, "Input"],
-Cell[147693, 3746, 469, 12, 50, "Output"],
-Cell[148165, 3760, 329, 7, 32, "Output"]
+Cell[147002, 3726, 764, 19, 52, "Input"],
+Cell[147769, 3747, 469, 12, 50, "Output"],
+Cell[148241, 3761, 329, 7, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[148531, 3772, 235, 5, 31, "Input"],
-Cell[148769, 3779, 632, 22, 50, "Output"]
+Cell[148607, 3773, 380, 7, 48, "Input"],
+Cell[148990, 3782, 732, 23, 50, "Output"],
+Cell[CellGroupData[{
+Cell[149747, 3809, 257, 9, 41, "Print"],
+Cell[150007, 3820, 231, 8, 41, "Print"],
+Cell[150241, 3830, 91, 3, 24, "Print"]
 }, Open  ]]
+}, Open  ]],
+Cell[150359, 3837, 132, 2, 31, "Input"]
 }, Open  ]]
 }
 ]

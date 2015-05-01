@@ -12,13 +12,21 @@ BeginPackage["VisualDebug`"]
 VisualDebug::usage= "Main utility"
 step
 stepTrace
+stepTracePrint
 shape
 
 Begin["`Private`"]
 (* Implementation of the package *)
 
+SetAttributes[stepTracePrint, HoldFirst]
+stepTracePrint[expr_, opts: OptionsPattern[{"OutputWrapper" -> Defer, "HaltingContexts" -> {"Global`"}, "MaxSteps"-> 100}]] := Module[
+	{
+		stepTraceList = stepTrace[expr, opts]
+	},
+	Scan[Print, stepTraceList]
+]
+
 SetAttributes[stepTrace, HoldFirst]
-(*ClearAttributes[stepTrace, HoldFirst]*)
 stepTrace[expr_, OptionsPattern[{"OutputWrapper" -> Defer, "HaltingContexts" -> {"Global`"}, "MaxSteps"-> 100}]] := Module[
 	{
 		currentExpr, newExpr = HoldForm[expr], stepNumber = 0
