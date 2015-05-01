@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     53241,       1405]
-NotebookOptionsPosition[     49896,       1292]
-NotebookOutlinePosition[     50467,       1311]
-CellTagsIndexPosition[     50424,       1308]
+NotebookDataLength[     54642,       1434]
+NotebookOptionsPosition[     51294,       1321]
+NotebookOutlinePosition[     51865,       1340]
+CellTagsIndexPosition[     51822,       1337]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -805,92 +805,120 @@ debug[expr1, Heads -> False]\
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{VisualDebug`Private`partNumber$$ = 6, Typeset`show$$ = 
-    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
-    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
-    "\"untitled\"", Typeset`specs$$ = {{
-      Hold[VisualDebug`Private`partNumber$$], 1, 
+   DynamicModuleBox[{VisualDebug`Private`partNumber$310919$$ = 4, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[VisualDebug`Private`partNumber$310919$$], 1, 
       Dynamic[
-       Length[VisualDebug`Private`allowedParts$309265]], 1}, {
+       Length[VisualDebug`Private`allowedParts$310919]], 1}, {
       Hold[
        Row[{
          Button[
          "Evaluate", 
-          VisualDebug`Private`currentExpr$309265 = 
+          VisualDebug`Private`currentExpr$310919 = 
            ReplacePart[
-            VisualDebug`Private`currentExpr$309265, 
-             VisualDebug`Private`part$309265 -> Evaluate[
+            VisualDebug`Private`currentExpr$310919, 
+             VisualDebug`Private`part$310919 -> Evaluate[
                Extract[
-               VisualDebug`Private`currentExpr$309265, 
-                VisualDebug`Private`part$309265]]]; 
-          VisualDebug`Private`allowedParts$309265 = Rest[
+               VisualDebug`Private`currentExpr$310919, 
+                VisualDebug`Private`part$310919]]]; 
+          VisualDebug`Private`allowedParts$310919 = Rest[
              Sort[
-              Position[VisualDebug`Private`currentExpr$309265, 
+              Position[VisualDebug`Private`currentExpr$310919, 
                Blank[], Heads -> 
                OptionValue[{"Heads" -> False}, {Heads -> False}, "Heads"]]]]], 
-         Button["Reset", VisualDebug`Private`partNumber$$ = If[
-             OptionValue[{"Heads" -> False}, {Heads -> False}, "Heads"], 2, 
-             1]; VisualDebug`Private`currentExpr$309265 = $CellContext`expr1; 
-          VisualDebug`Private`allowedParts$309265 = Rest[
+         Button[
+         "Step", VisualDebug`Private`currentExpr$310919 = 
+           ReplacePart[
+            VisualDebug`Private`currentExpr$310919, 
+             VisualDebug`Private`part$310919 -> VisualDebug`step[
+               Extract[
+               VisualDebug`Private`currentExpr$310919, 
+                VisualDebug`Private`part$310919]]]; 
+          VisualDebug`Private`allowedParts$310919 = Rest[
              Sort[
-              Position[VisualDebug`Private`currentExpr$309265, 
+              Position[VisualDebug`Private`currentExpr$310919, 
+               Blank[], Heads -> 
+               OptionValue[{"Heads" -> False}, {Heads -> False}, "Heads"]]]]], 
+         Button["Reset", VisualDebug`Private`partNumber$310919$$ = If[
+             OptionValue[{"Heads" -> False}, {Heads -> False}, "Heads"], 2, 
+             1]; VisualDebug`Private`currentExpr$310919 = $CellContext`expr1; 
+          VisualDebug`Private`allowedParts$310919 = Rest[
+             Sort[
+              Position[VisualDebug`Private`currentExpr$310919, 
                Blank[], Heads -> 
                OptionValue[{"Heads" -> False}, {Heads -> False}, 
                  "Heads"]]]]]}]], Manipulate`Dump`ThisIsNotAControl}}, 
-    Typeset`size$$ = {296., {5., 13.}}, Typeset`update$$ = 0, 
+    Typeset`size$$ = {615., {13., 20.}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
-    VisualDebug`Private`partNumber$309266$$ = 0}, 
+    VisualDebug`Private`partNumber$310919$310920$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
-     1, StandardForm, "Variables" :> {VisualDebug`Private`partNumber$$ = 1}, 
+     1, StandardForm, 
+      "Variables" :> {VisualDebug`Private`partNumber$310919$$ = 1}, 
       "ControllerVariables" :> {
         Hold[
-        VisualDebug`Private`partNumber$$, 
-         VisualDebug`Private`partNumber$309266$$, 0]}, 
+        VisualDebug`Private`partNumber$310919$$, 
+         VisualDebug`Private`partNumber$310919$310920$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, 
       "Body" :> (
-       VisualDebug`Private`part$309265 = 
-        Part[VisualDebug`Private`allowedParts$309265, 
-          VisualDebug`Private`partNumber$$]; 
+       VisualDebug`Private`part$310919 = 
+        Part[VisualDebug`Private`allowedParts$310919, 
+          VisualDebug`Private`partNumber$310919$$]; 
        ReplacePart[
-        VisualDebug`Private`currentExpr$309265, 
-         VisualDebug`Private`part$309265 -> Style[
+        VisualDebug`Private`currentExpr$310919, 
+         VisualDebug`Private`part$310919 -> Style[
            Extract[
-           VisualDebug`Private`currentExpr$309265, 
-            VisualDebug`Private`part$309265, HoldForm], FontColor -> 
+           VisualDebug`Private`currentExpr$310919, 
+            VisualDebug`Private`part$310919, HoldForm], FontColor -> 
            RGBColor[1, 0, 0], Bold]]), 
-      "Specifications" :> {{VisualDebug`Private`partNumber$$, 1, 
+      "Specifications" :> {{VisualDebug`Private`partNumber$310919$$, 1, 
          Dynamic[
-          Length[VisualDebug`Private`allowedParts$309265]], 1}, 
+          Length[VisualDebug`Private`allowedParts$310919]], 1}, 
         Row[{
           Button[
           "Evaluate", 
-           VisualDebug`Private`currentExpr$309265 = 
+           VisualDebug`Private`currentExpr$310919 = 
             ReplacePart[
-             VisualDebug`Private`currentExpr$309265, 
-              VisualDebug`Private`part$309265 -> Evaluate[
+             VisualDebug`Private`currentExpr$310919, 
+              VisualDebug`Private`part$310919 -> Evaluate[
                 Extract[
-                VisualDebug`Private`currentExpr$309265, 
-                 VisualDebug`Private`part$309265]]]; 
-           VisualDebug`Private`allowedParts$309265 = Rest[
+                VisualDebug`Private`currentExpr$310919, 
+                 VisualDebug`Private`part$310919]]]; 
+           VisualDebug`Private`allowedParts$310919 = Rest[
               Sort[
-               Position[VisualDebug`Private`currentExpr$309265, 
+               Position[VisualDebug`Private`currentExpr$310919, 
                 Blank[], Heads -> 
                 OptionValue[{"Heads" -> False}, {Heads -> False}, 
                   "Heads"]]]]], 
-          Button["Reset", VisualDebug`Private`partNumber$$ = If[
-              OptionValue[{"Heads" -> False}, {Heads -> False}, "Heads"], 2, 
-              1]; VisualDebug`Private`currentExpr$309265 = $CellContext`expr1; 
-           VisualDebug`Private`allowedParts$309265 = Rest[
+          Button[
+          "Step", VisualDebug`Private`currentExpr$310919 = 
+            ReplacePart[
+             VisualDebug`Private`currentExpr$310919, 
+              VisualDebug`Private`part$310919 -> VisualDebug`step[
+                Extract[
+                VisualDebug`Private`currentExpr$310919, 
+                 VisualDebug`Private`part$310919]]]; 
+           VisualDebug`Private`allowedParts$310919 = Rest[
               Sort[
-               Position[VisualDebug`Private`currentExpr$309265, 
+               Position[VisualDebug`Private`currentExpr$310919, 
+                Blank[], Heads -> 
+                OptionValue[{"Heads" -> False}, {Heads -> False}, 
+                  "Heads"]]]]], 
+          Button["Reset", VisualDebug`Private`partNumber$310919$$ = If[
+              OptionValue[{"Heads" -> False}, {Heads -> False}, "Heads"], 2, 
+              1]; VisualDebug`Private`currentExpr$310919 = $CellContext`expr1; 
+           VisualDebug`Private`allowedParts$310919 = Rest[
+              Sort[
+               Position[VisualDebug`Private`currentExpr$310919, 
                 Blank[], Heads -> 
                 OptionValue[{"Heads" -> False}, {Heads -> False}, 
                   "Heads"]]]]]}]}, "Options" :> {}, "DefaultOptions" :> {}],
-     ImageSizeCache->{484., {77., 82.}},
+     ImageSizeCache->{666., {85., 90.}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -908,7 +936,8 @@ Cell[BoxData[
    3.6386408466485753`*^9, 3.638640943201183*^9, {3.6386409776781826`*^9, 
    3.638641004445183*^9}, 3.6386425479609013`*^9, 3.639155444250182*^9, 
    3.6391560295591817`*^9, 3.6391561148811817`*^9, 3.63948593064143*^9, 
-   3.639486138252514*^9}]
+   3.639486138252514*^9, 3.6394863963487563`*^9, {3.639486445612609*^9, 
+   3.639486451322099*^9}}]
 }, Open  ]]
 }, Open  ]],
 
@@ -1352,59 +1381,59 @@ Cell[CellGroupData[{
 Cell[29821, 760, 101, 1, 52, "Section"],
 Cell[CellGroupData[{
 Cell[29947, 765, 2670, 37, 48, "Input"],
-Cell[32620, 804, 5046, 106, 176, "Output"]
+Cell[32620, 804, 6444, 135, 192, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37715, 916, 103, 1, 82, "Section"],
-Cell[37821, 919, 318, 6, 52, "Input",
+Cell[39113, 945, 103, 1, 82, "Section"],
+Cell[39219, 948, 318, 6, 52, "Input",
  InitializationCell->True],
-Cell[38142, 927, 709, 18, 112, "Input"],
+Cell[39540, 956, 709, 18, 112, "Input"],
 Cell[CellGroupData[{
-Cell[38876, 949, 695, 20, 92, "Input"],
-Cell[39574, 971, 488, 11, 32, "Output"],
-Cell[40065, 984, 490, 11, 32, "Output"],
-Cell[40558, 997, 490, 11, 32, "Output"],
-Cell[41051, 1010, 505, 12, 32, "Output"]
+Cell[40274, 978, 695, 20, 92, "Input"],
+Cell[40972, 1000, 488, 11, 32, "Output"],
+Cell[41463, 1013, 490, 11, 32, "Output"],
+Cell[41956, 1026, 490, 11, 32, "Output"],
+Cell[42449, 1039, 505, 12, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[41593, 1027, 423, 10, 52, "Input"],
-Cell[42019, 1039, 226, 4, 32, "Output"],
-Cell[42248, 1045, 437, 15, 34, "Output"]
+Cell[42991, 1056, 423, 10, 52, "Input"],
+Cell[43417, 1068, 226, 4, 32, "Output"],
+Cell[43646, 1074, 437, 15, 34, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[42722, 1065, 215, 4, 52, "Input"],
-Cell[42940, 1071, 96, 1, 32, "Output"],
-Cell[43039, 1074, 99, 1, 32, "Output"]
+Cell[44120, 1094, 215, 4, 52, "Input"],
+Cell[44338, 1100, 96, 1, 32, "Output"],
+Cell[44437, 1103, 99, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[43175, 1080, 352, 8, 31, "Input"],
-Cell[43530, 1090, 1448, 43, 34, "Output"]
+Cell[44573, 1109, 352, 8, 31, "Input"],
+Cell[44928, 1119, 1448, 43, 34, "Output"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[45027, 1139, 100, 1, 52, "Section"],
+Cell[46425, 1168, 100, 1, 52, "Section"],
 Cell[CellGroupData[{
-Cell[45152, 1144, 705, 13, 52, "Input"],
-Cell[45860, 1159, 352, 5, 32, "Output"]
+Cell[46550, 1173, 705, 13, 52, "Input"],
+Cell[47258, 1188, 352, 5, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46249, 1169, 764, 19, 52, "Input"],
-Cell[47016, 1190, 469, 12, 50, "Output"],
-Cell[47488, 1204, 329, 7, 32, "Output"]
+Cell[47647, 1198, 764, 19, 52, "Input"],
+Cell[48414, 1219, 469, 12, 50, "Output"],
+Cell[48886, 1233, 329, 7, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[47854, 1216, 380, 7, 48, "Input"],
-Cell[48237, 1225, 732, 23, 50, "Output"],
+Cell[49252, 1245, 380, 7, 48, "Input"],
+Cell[49635, 1254, 732, 23, 50, "Output"],
 Cell[CellGroupData[{
-Cell[48994, 1252, 257, 9, 41, "Print"],
-Cell[49254, 1263, 231, 8, 41, "Print"],
-Cell[49488, 1273, 91, 3, 24, "Print"]
+Cell[50392, 1281, 257, 9, 41, "Print"],
+Cell[50652, 1292, 231, 8, 41, "Print"],
+Cell[50886, 1302, 91, 3, 24, "Print"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[49628, 1282, 132, 2, 31, "Input"],
-Cell[49763, 1286, 105, 2, 32, "Output"]
+Cell[51026, 1311, 132, 2, 31, "Input"],
+Cell[51161, 1315, 105, 2, 32, "Output"]
 }, Open  ]]
 }, Closed]]
 }

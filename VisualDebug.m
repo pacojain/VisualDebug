@@ -59,7 +59,7 @@ step[expr_, OptionsPattern[{"OutputWrapper" -> HoldForm, "HaltingContexts" -> {"
 SetAttributes[debug, HoldFirst]
 debug[origExpr_, opts : OptionsPattern[{"Heads" -> False}]] := Module[
 	{
-		currentExpr, allowedParts, part
+		currentExpr, allowedParts, part, partNumber
 	},
 	currentExpr = origExpr;
 	allowedParts = Position[currentExpr, _, Heads -> OptionValue["Heads"]] // Sort // Rest;
@@ -71,6 +71,10 @@ debug[origExpr_, opts : OptionsPattern[{"Heads" -> False}]] := Module[
 		Row[{
 			Button["Evaluate",	
 				currentExpr = ReplacePart[currentExpr, part -> Evaluate[Extract[currentExpr, part]]];
+				allowedParts = Position[currentExpr, _, Heads -> OptionValue["Heads"]] // Sort // Rest
+			],
+			Button["Step",	
+				currentExpr = ReplacePart[currentExpr, part -> step[Extract[currentExpr, part]]];
 				allowedParts = Position[currentExpr, _, Heads -> OptionValue["Heads"]] // Sort // Rest
 			],
 			Button["Reset",
